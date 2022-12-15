@@ -1,0 +1,11 @@
+ITERATE THROUGH STARTING URLS
+LOAD TO startingURL
+ITERATE THROUGH regions
+CAPTURE region
+CLICK region
+ITERATE THROUGH subregions
+LOAD TO subregion
+ITERATE THROUGH locations
+CAPTURE locationName
+CAPTURE city
+CAPTURE state

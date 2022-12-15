@@ -1,0 +1,110 @@
+{
+    "meta": {
+        "processName": "",
+        "custom": {
+            "creator": ""
+        },
+        "defaultTimeout": 30000,
+        "typeBlock": [
+            "image"
+        ]
+    },
+    "actions1": [
+        {
+            "actionType": "inputlist",
+            "field": "STARTING URLS",
+            "processName": "default",
+            "collectionName": "_data",
+            "queryName": "default",
+            "index": "%%index%%",
+            "passAlongFields": [
+                "__ALL__"
+            ],
+            "excludeFields": [],
+            "childActs": [
+                {
+                    "actionType": "load",
+                    "field": "load to startingURL",
+                    "url": "%%startingURL%%",
+                    "newPage": 2
+                }
+            ]
+        }
+    ],
+    "actions2": [
+        {
+            "actionType": "items",
+            "field": "regions",
+            "xPath": [],
+            "waitfor": 0,
+            "optional": false,
+            "childActs": [
+                {
+                    "actionType": "capture",
+                    "field": "region",
+                    "xPath": [],
+                    "type": "text",
+                    "waitfor": 0,
+                    "optional": false
+                },
+                {
+                    "actionType": "click",
+                    "field": "click region",
+                    "xPath": [],
+                    "waitfor": 0,
+                    "optional": false
+                },
+                {
+                    "actionType": "items",
+                    "field": "subregions",
+                    "xPath": [],
+                    "waitfor": 0,
+                    "optional": false,
+                    "childActs": [
+                        {
+                            "actionType": "load",
+                            "field": "load to subregion",
+                            "url": "%%subregion%%",
+                            "newPage": 3
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "actions3": [
+        {
+            "actionType": "items",
+            "field": "locations",
+            "xPath": [],
+            "waitfor": 0,
+            "optional": false,
+            "childActs": [
+                {
+                    "actionType": "capture",
+                    "field": "locationName",
+                    "xPath": [],
+                    "type": "text",
+                    "waitfor": 0,
+                    "optional": false
+                },
+                {
+                    "actionType": "capture",
+                    "field": "city",
+                    "xPath": [],
+                    "type": "text",
+                    "waitfor": 0,
+                    "optional": false
+                },
+                {
+                    "actionType": "capture",
+                    "field": "state",
+                    "xPath": [],
+                    "type": "text",
+                    "waitfor": 0,
+                    "optional": false
+                }
+            ]
+        }
+    ]
+}
